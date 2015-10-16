@@ -32,6 +32,10 @@ import com.sqa.ao.utils.Helper;
  */
 public class CalculatorTests {
 
+	private static double[][] data;
+
+	private static double test;
+
 	@BeforeClass
 	public static void setupClass() {
 		System.out.println("Setup Before Class");
@@ -67,12 +71,17 @@ public class CalculatorTests {
 		System.out.println("Doubles:" + Arrays.toString(operands1D) + "\n" + Arrays.toString(operands2D) + "\n"
 				+ Arrays.toString(expAddResultsD) + "\n" + Arrays.toString(expSubResultsD) + "\n"
 				+ Arrays.toString(expMultResultsD));
+
+		data = new double[operands1D.length][];
+		data[0] = operands1D;
+		data[1] = operands2D;
+		data[2] = expAddResultsD;
+		data[3] = expSubResultsD;
+		data[4] = expMultResultsD;
+		System.out.println("Data: " + Arrays.deepToString(data));
 	}
 
-	private double[][] data;
 	int currentTestIndex;
-
-	double test;
 
 	@Test
 	public void test1() {
