@@ -13,6 +13,7 @@ package com.sqa.ao.math.functions;
 import java.util.Arrays;
 import java.util.Properties;
 
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -80,26 +81,16 @@ public class CalculatorTests {
 		// + Arrays.toString(expAddResultsD) + "\n" +
 		// Arrays.toString(expSubResultsD) + "\n"
 		// + Arrays.toString(expMultResultsD));
-
-		data = new double[operands1D.length][];
+		// data = new double[operands1D.length][];
 		// data[0] = operands1D;
 		// data[1] = operands2D;
 		// data[2] = expAddResultsD;
-		// data[3] = expSubResultsD;
-		// data[4] = expMultResultsD;
-		// System.out.println("Data: " + Arrays.deepToString(data));
-		//
-		double data[][] = { { operands1D[0], operands2D[0], expAddResultsD[0], expSubResultsD[0], expMultResultsD[0] },
-				{ operands1D[1], operands2D[1], expAddResultsD[1], expSubResultsD[1], expMultResultsD[1] },
-				{ operands1D[2], operands2D[2], expAddResultsD[2], expSubResultsD[2], expMultResultsD[2] },
-				{ operands1D[3], operands2D[3], expAddResultsD[3], expSubResultsD[3], expMultResultsD[3] },
-				{ operands1D[4], operands2D[4], expAddResultsD[4], expSubResultsD[4], expMultResultsD[4] },
-				{ operands1D[5], operands2D[5], expAddResultsD[5], expSubResultsD[5], expMultResultsD[5] },
-				{ operands1D[6], operands2D[6], expAddResultsD[6], expSubResultsD[6], expMultResultsD[6] },
-				{ operands1D[7], operands2D[7], expAddResultsD[7], expSubResultsD[7], expMultResultsD[7] } };
-
-		// data[0] = new double[] { operands1D[0], operands2D[0],
-		// expAddResultsD[0], expSubResultsD[0], expMultResultsD[0] };
+		// data[3] = expAddResultsD;
+		// data[4] = expAddResultsD;
+		// System.out.println("Data Deep: " + Arrays.deepToString(data));
+		// System.out.println("Data String: " + Arrays.toString(data));
+		// double data[][] = { { operands1D[0], operands2D[0],
+		// expAddResultsD[0], expSubResultsD[0], expMultResultsD[0] },
 		// { operands1D[1], operands2D[1], expAddResultsD[1], expSubResultsD[1],
 		// expMultResultsD[1] },
 		// { operands1D[2], operands2D[2], expAddResultsD[2], expSubResultsD[2],
@@ -114,24 +105,50 @@ public class CalculatorTests {
 		// expMultResultsD[6] },
 		// { operands1D[7], operands2D[7], expAddResultsD[7], expSubResultsD[7],
 		// expMultResultsD[7] } };
-		//
+		// data[0] = new double[]
+		// {operands1D[0],operands2D[0],expAddResultsD[0],
+		// expSubResultsD[0],expMultResultsD[0]};
+		// {operands1D[1],operands2D[1],expAddResultsD[1],
+		// expSubResultsD[1],expMultResultsD[1]},
+		// {operands1D[2],operands2D[2],expAddResultsD[2],
+		// expSubResultsD[2],expMultResultsD[2]},
+		// {operands1D[3],operands2D[3],expAddResultsD[3],
+		// expSubResultsD[3],expMultResultsD[3]},
+		// {operands1D[4],operands2D[4],expAddResultsD[4],
+		// expSubResultsD[4],expMultResultsD[4]},
+		// {operands1D[5],operands2D[5],expAddResultsD[5],
+		// expSubResultsD[5],expMultResultsD[5]},
+		// {operands1D[6],operands2D[6],expAddResultsD[6],
+		// expSubResultsD[6],expMultResultsD[6]},
+		// {operands1D[7],operands2D[7],expAddResultsD[7],
+		// expSubResultsD[7],expMultResultsD[7]}};
 		data = new double[operands1D.length][];
-		for (int row = 0; row < columnsCount; row++) {
+		for (int row = 0; row < operands1D.length; row++) {
 			data[row] = new double[] { operands1D[row], operands2D[row], expAddResultsD[row], expSubResultsD[row],
 					expMultResultsD[row] };
 		}
 		System.out.println("Data Deep: " + Arrays.deepToString(data));
-
 	}
 
 	@Test
 	public void test1() {
-		// fail("Not yet implemented");
+		System.out.println("Add Test: ");
+		double operand1 = data[0][0];
+		double operand2 = data[0][1];
+		double expAddResult = data[0][2];
+		double actualResult = Calculator.addNumbers(operand1, operand2);
+		System.out.println(operand1 + " + " + operand2 + " = " + expAddResult + "?... " + " = " + actualResult);
+		Assert.assertEquals(expAddResult, actualResult, 0);
 	}
 
 	@Test
 	public void test2() {
-		// fail("Not yet implemented");
+		System.out.println("Add Test: ");
+		double operand1 = data[1][0];
+		double operand2 = data[1][1];
+		double expAddResult = data[1][2];
+		double actualResult = Calculator.addNumbers(operand1, operand2);
+		System.out.println(operand1 + " + " + operand2 + " = " + expAddResult + "?... " + " = " + actualResult);
 	}
 
 	@Test

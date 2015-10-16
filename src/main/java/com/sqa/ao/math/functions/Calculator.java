@@ -102,17 +102,17 @@ package com.sqa.ao.math.functions;
 public class Calculator {
 	public static double addNumbers(double operand1, double operand2) {
 		double result = operand1 + operand2;
-		return 0D;
+		return result;
 	}
 
 	public static double multiplyNumbers(double operand1, double operand2) {
 		double result = operand1 * operand2;
-		return 0D;
+		return result;
 	}
 
 	public static double subtractNumbers(double operand1, double operand2) {
 		double result = operand1 - operand2;
-		return 0D;
+		return result;
 	}
 
 }
