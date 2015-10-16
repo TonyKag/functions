@@ -12,7 +12,12 @@ package com.sqa.ao.math.functions;
 
 import static org.junit.Assert.fail;
 
+import java.util.Properties;
+
+import org.junit.BeforeClass;
 import org.junit.Test;
+
+import com.sqa.ao.utils.Helper;
 
 /**
  * CalculatorTests //ADDD (description of class)
@@ -28,8 +33,15 @@ import org.junit.Test;
  */
 public class CalculatorTests {
 
+	@BeforeClass
+	public static void setupClass() {
+		System.out.println("Setup before class");
+		Properties props = Helper.loadProperties("calculate.properties");
+	}
+
 	private double[][] data;
 	int currentTestIndex;
+
 	double test;
 
 	@Test
