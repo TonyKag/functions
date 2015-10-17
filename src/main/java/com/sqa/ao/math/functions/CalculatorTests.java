@@ -21,10 +21,6 @@ import com.sqa.ao.utils.Helper;
 
 /**
  * CalculatorTests //ADDD (description of class)
- * <p>
- * //ADDD (description of core fields)
- * <p>
- * //ADDD (description of core methods)
  * 
  * @author Yutaka
  * @version 1.0.0
@@ -38,7 +34,7 @@ public class CalculatorTests {
 	private static double test;
 
 	static int columnsCount = 5;
-	static int columnsNumber;
+	// static int columnsNumber;
 
 	static int currentTestIndex;
 
@@ -56,11 +52,7 @@ public class CalculatorTests {
 		double[] expAddResultsD = new double[expAddResults.length];
 		double[] expSubResultsD = new double[expSubResults.length];
 		double[] expMultResultsD = new double[expMultResults.length];
-		// System.out.println("Strings:" + Arrays.toString(operands1) + "\n" +
-		// Arrays.toString(operands2) + "\n"
-		// + Arrays.toString(expAddResults) + "\n" +
-		// Arrays.toString(expSubResults) + "\n"
-		// + Arrays.toString(expMultResults));
+
 		for (int i = 0; i < operands1.length; i++) {
 			operands1D[i] = Double.parseDouble(operands1[i]);
 		}
@@ -76,52 +68,7 @@ public class CalculatorTests {
 		for (int i = 0; i < expMultResults.length; i++) {
 			expMultResultsD[i] = Double.parseDouble(expMultResults[i]);
 		}
-		// System.out.println("Doubles:" + Arrays.toString(operands1D) + "\n" +
-		// Arrays.toString(operands2D) + "\n"
-		// + Arrays.toString(expAddResultsD) + "\n" +
-		// Arrays.toString(expSubResultsD) + "\n"
-		// + Arrays.toString(expMultResultsD));
-		// data = new double[operands1D.length][];
-		// data[0] = operands1D;
-		// data[1] = operands2D;
-		// data[2] = expAddResultsD;
-		// data[3] = expAddResultsD;
-		// data[4] = expAddResultsD;
-		// System.out.println("Data Deep: " + Arrays.deepToString(data));
-		// System.out.println("Data String: " + Arrays.toString(data));
-		// double data[][] = { { operands1D[0], operands2D[0],
-		// expAddResultsD[0], expSubResultsD[0], expMultResultsD[0] },
-		// { operands1D[1], operands2D[1], expAddResultsD[1], expSubResultsD[1],
-		// expMultResultsD[1] },
-		// { operands1D[2], operands2D[2], expAddResultsD[2], expSubResultsD[2],
-		// expMultResultsD[2] },
-		// { operands1D[3], operands2D[3], expAddResultsD[3], expSubResultsD[3],
-		// expMultResultsD[3] },
-		// { operands1D[4], operands2D[4], expAddResultsD[4], expSubResultsD[4],
-		// expMultResultsD[4] },
-		// { operands1D[5], operands2D[5], expAddResultsD[5], expSubResultsD[5],
-		// expMultResultsD[5] },
-		// { operands1D[6], operands2D[6], expAddResultsD[6], expSubResultsD[6],
-		// expMultResultsD[6] },
-		// { operands1D[7], operands2D[7], expAddResultsD[7], expSubResultsD[7],
-		// expMultResultsD[7] } };
-		// data[0] = new double[]
-		// {operands1D[0],operands2D[0],expAddResultsD[0],
-		// expSubResultsD[0],expMultResultsD[0]};
-		// {operands1D[1],operands2D[1],expAddResultsD[1],
-		// expSubResultsD[1],expMultResultsD[1]},
-		// {operands1D[2],operands2D[2],expAddResultsD[2],
-		// expSubResultsD[2],expMultResultsD[2]},
-		// {operands1D[3],operands2D[3],expAddResultsD[3],
-		// expSubResultsD[3],expMultResultsD[3]},
-		// {operands1D[4],operands2D[4],expAddResultsD[4],
-		// expSubResultsD[4],expMultResultsD[4]},
-		// {operands1D[5],operands2D[5],expAddResultsD[5],
-		// expSubResultsD[5],expMultResultsD[5]},
-		// {operands1D[6],operands2D[6],expAddResultsD[6],
-		// expSubResultsD[6],expMultResultsD[6]},
-		// {operands1D[7],operands2D[7],expAddResultsD[7],
-		// expSubResultsD[7],expMultResultsD[7]}};
+
 		data = new double[operands1D.length][];
 		for (int row = 0; row < operands1D.length; row++) {
 			data[row] = new double[] { operands1D[row], operands2D[row], expAddResultsD[row], expSubResultsD[row],
@@ -149,36 +96,72 @@ public class CalculatorTests {
 		double expAddResult = data[1][2];
 		double actualResult = Calculator.addNumbers(operand1, operand2);
 		System.out.println(operand1 + " + " + operand2 + " = " + expAddResult + "?... " + " = " + actualResult);
+		Assert.assertEquals(expAddResult, actualResult, 0);
 	}
 
 	@Test
 	public void test3() {
-		// fail("Not yet implemented");
+		System.out.println("Add Test: ");
+		double operand1 = data[2][0];
+		double operand2 = data[2][1];
+		double expAddResult = data[2][2];
+		double actualResult = Calculator.addNumbers(operand1, operand2);
+		System.out.println(operand1 + " + " + operand2 + " = " + expAddResult + "?... " + " = " + actualResult);
+		Assert.assertEquals(expAddResult, actualResult, 0);
 	}
 
 	@Test
 	public void test4() {
-		// fail("Not yet implemented");
+		System.out.println("Add Test: ");
+		double operand1 = data[3][0];
+		double operand2 = data[3][1];
+		double expAddResult = data[3][2];
+		double actualResult = Calculator.addNumbers(operand1, operand2);
+		System.out.println(operand1 + " + " + operand2 + " = " + expAddResult + "?... " + " = " + actualResult);
+		Assert.assertEquals(expAddResult, actualResult, 0);
 	}
 
 	@Test
 	public void test5() {
-		// fail("Not yet implemented");
+		System.out.println("Add Test: ");
+		double operand1 = data[4][0];
+		double operand2 = data[4][1];
+		double expAddResult = data[4][2];
+		double actualResult = Calculator.addNumbers(operand1, operand2);
+		System.out.println(operand1 + " + " + operand2 + " = " + expAddResult + "?... " + " = " + actualResult);
+		Assert.assertEquals(expAddResult, actualResult, 0);
 	}
 
 	@Test
 	public void test6() {
-		// fail("Not yet implemented");
+		System.out.println("Add Test: ");
+		double operand1 = data[5][0];
+		double operand2 = data[5][1];
+		double expAddResult = data[5][2];
+		double actualResult = Calculator.addNumbers(operand1, operand2);
+		System.out.println(operand1 + " + " + operand2 + " = " + expAddResult + "?... " + " = " + actualResult);
+		Assert.assertEquals(expAddResult, actualResult, 0);
 	}
 
 	@Test
 	public void test7() {
-		// fail("Not yet implemented");
+		System.out.println("Add Test: ");
+		double operand1 = data[6][0];
+		double operand2 = data[6][1];
+		double expAddResult = data[6][2];
+		double actualResult = Calculator.addNumbers(operand1, operand2);
+		System.out.println(operand1 + " + " + operand2 + " = " + expAddResult + "?... " + " = " + actualResult);
+		Assert.assertEquals(expAddResult, actualResult, 0);
 	}
 
 	@Test
 	public void test8() {
-		// fail("Not yet implemented");
+		System.out.println("Add Test: ");
+		double operand1 = data[7][0];
+		double operand2 = data[7][1];
+		double expAddResult = data[7][2];
+		double actualResult = Calculator.addNumbers(operand1, operand2);
+		System.out.println(operand1 + " + " + operand2 + " = " + expAddResult + "?... " + " = " + actualResult);
+		Assert.assertEquals(expAddResult, actualResult, 0);
 	}
-
 }
